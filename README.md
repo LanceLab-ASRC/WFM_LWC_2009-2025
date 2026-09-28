@@ -1,17 +1,17 @@
-**Hourly Liquid Water Content (LWC) and Visibility data from Whiteface Mountain (WFM), 2009 through 2025.
+**Hourly Liquid Water Content (LWC) and Visibility data from Whiteface Mountain (WFM), 2009 through 2025.**
 
-Also, in-cloud average LWC associated with each cloud water sample collected from WFM over this same time period**
+**Also, in-cloud average LWC associated with each cloud water sample collected from WFM over this same time period.**
 
 # LWC Calculation Workflow
 
 ## Compile hourly LWC data
 
 1. Compile all hourly LWC data for 2009 through 2017 from ALSC (e.g. $\color{#2ea44f}{\text{WFC.2009.MET.R.xlsx}}$)
-2. Adjust minute resolution ASRC LWC data (2018 through 2025) for baseline drift, based on elevated values during clear air periods (see [**$\color{#8250df}{\text{Adjustments}}$**](#adjustments), below)
+2. Adjust minute resolution ASRC LWC data (2018 through 2025) for baseline drift, based on elevated values during clear air periods (see [**Adjustments**](#adjustments), below)
 3. Calculate hourly avg ASRC LWC values (2018 through 2025, not previously published elsewhere)
 4. Filter out LWC values below zero or above 2.0 g/m^3 from the hourly average datasets (set to NaN)
 5. Time sync and evaluate hourly avg LWC data for 2022 through 2025 based on PVM/visibility sensor comparison
-6. Fill gaps in Gerber PVM dataset with LWC calculated based on visibility sensor readings (see [**$\color{#8250df}{\text{Merge_LWC_Vis}}$**](#merge), below)
+6. Fill gaps in Gerber PVM dataset with LWC calculated based on visibility sensor readings (see [**Merge_LWC_Vis**](#merge-lwc-vis), below)
 7. Append ASRC hourly average merged LWC data to ALSC data
 
 ## Calculate in-cloud LWC average values associated with cloud water samples
@@ -23,25 +23,25 @@ Also, in-cloud average LWC associated with each cloud water sample collected fro
          * for 2009 through 2013, Dump_DateTime = DateON + 3 hrs
          * for 2014 through 2017, Dump_DateTime = DateON + 12 hrs
        * dateW in 2014 are incorrect (neither DumpDateTime NOR DateON)
-         * DumpDateTime in 2014 now calculated based on hourly Pooled Volume dataset (see [**$\color{#8250df}{\text{DumpTimes2014}}$**](#dump), below)
+         * DumpDateTime in 2014 now calculated based on hourly Pooled Volume dataset (see [**DumpTimes2014**](#dumptime2014), below)
    * 1.2 Append Archana GitHub DumpDateTime and ID data for 2022 through 2024 (e.g. $\color{#2ea44f}{\text{2018.xlsx}}$)
    * 1.3 Add 2025 Dump_DateTime and Sample IDs from 2025 cloud water master list
-2. Calculate average in-cloud LWC average for each cloud water sample (see [**$\color{#8250df}{\text{calc_avg_incloud_LWC2}}$**](#avg), below)
+2. Calculate average in-cloud LWC average for each cloud water sample (see [**calc_avg_incloud_LWC2**](#calc-avg-incloud-lwc), below)
 3. Perform linear fit of in-cloud LWC averages
-4. Calculate annual means for in-cloud LWC averages each summer (see [**$\color{#8250df}{\text{calc_annual_mean_sampleLWC}}$**](#avg2), below)
+4. Calculate annual means for in-cloud LWC averages each summer (see [**calc_annual_mean_sampleLWC**](#calc-annual-mean-sample-lwc), below)
 
 ## Coding for Calculations _(Done in **Igor Pro**)_
 
-<a name="Merge_LWC_Vis"></a>
+<a name="merge-lwc-vis"></a>
 ![Igor Function for filling in gaps based on visibility sensor](/IgorFunction_Screenshots/Merge_LWC_Vis.png)
 
-<a name="DumpTimes2014"></a>
+<a name="dumptimes2014"></a>
 ![Igor Function for determining Dump Times](/IgorFunction_Screenshots/DumpTimes2014.png)
 
-<a name="calc_avg_incloud_LWC2"></a>
+<a name="calc-avg-incloud-lwc"></a>
 ![Igor Function for calculaing average in-cloud LWC for each sample](/IgorFunction_Screenshots/calc_avg_incloud_LWC2.png)
 
-<a name="calc_annual_mean_sample_LWC"></a>
+<a name="calc-annual-mean-sample-lwc"></a>
 ![Igor Function for calculating annual means for in-cloud LWC averages over each summer](/IgorFunction_Screenshots/calc_annual_mean_sample_LWC.png)
 
 ### $\color{#2f81f7}{\text{Adjustments}}$
