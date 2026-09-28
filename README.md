@@ -17,14 +17,14 @@
 ## Calculate in-cloud LWC average values associated with cloud water samples
 
 1. Compile list of DumpDateTimes and SampleIDs for all cloud water samples
-   * 1.1 Start with Chris GitHub dateW and LabID data for 2009 through 2017 ($\color{#2ea44f}{\text{AllCloudandMetData.csv}}$) 
+   * 1.1 Start with [Chris GitHub](https://github.com/LanceLab-ASRC/WhitefaceMountainCloudTrends) dateW and LabID data for 2009 through 2017 ($\color{#2ea44f}{\text{AllCloudandMetData.csv}}$) 
        * dateW = DateON (start time for cloud water sampling interval)
        * convert dateW to Dump_DateTime (end time for cloud water sampling interval)
          * for 2009 through 2013, Dump_DateTime = DateON + 3 hrs
          * for 2014 through 2017, Dump_DateTime = DateON + 12 hrs
        * dateW in 2014 are incorrect (neither DumpDateTime NOR DateON)
          * DumpDateTime in 2014 now calculated based on hourly Pooled Volume dataset (see [**DumpTimes2014**](#dumptime2014), below)
-   * 1.2 Append Archana GitHub DumpDateTime and ID data for 2022 through 2024 (e.g. $\color{#2ea44f}{\text{2018.xlsx}}$)
+   * 1.2 Append [Archana GitHub](https://github.com/LanceLab-ASRC/WFM-Cloud-Water-Datasets-2018-2024) DumpDateTime and ID data for 2022 through 2024 (e.g. $\color{#2ea44f}{\text{2018.xlsx}}$)
    * 1.3 Add 2025 Dump_DateTime and Sample IDs from 2025 cloud water master list
 2. Calculate average in-cloud LWC average for each cloud water sample (see [**calc_avg_incloud_LWC2**](#calc-avg-incloud-lwc), below)
 3. Perform linear fit of in-cloud LWC averages
@@ -32,19 +32,19 @@
 
 ## Coding for Calculations _(Done in **Igor Pro**)_
 
-<a name="merge-lwc-vis"></a>
+<a name="merge-lwc-vis">Merge_LWC_Vis</a>
 ![Igor Function for filling in gaps based on visibility sensor](/IgorFunction_Screenshots/Merge_LWC_Vis.png)
 
-<a name="dumptimes2014"></a>
+<a name="dumptimes2014">DumpTimes2014</a>
 ![Igor Function for determining Dump Times](/IgorFunction_Screenshots/DumpTimes2014.png)
 
-<a name="calc-avg-incloud-lwc"></a>
+<a name="calc-avg-incloud-lwc">calc_avg_incloud_LWC2</a>
 ![Igor Function for calculaing average in-cloud LWC for each sample](/IgorFunction_Screenshots/calc_avg_incloud_LWC2.png)
 
-<a name="calc-annual-mean-sample-lwc"></a>
+<a name="calc-annual-mean-sample-lwc">calc_annual_mean_sample_LWC</a>
 ![Igor Function for calculating annual means for in-cloud LWC averages over each summer](/IgorFunction_Screenshots/calc_annual_mean_sample_LWC.png)
 
-### $\color{#2f81f7}{\text{Adjustments}}$
+## $\color{#2f81f7}{\text{Adjustments}}$
 
 - 1-min resolution LWC data in 2018 was shifted +0.04 Aug 3 - 8
 - 1-min resolution LWC data in 2018 was shifted -0.04 Aug 10 - 17
