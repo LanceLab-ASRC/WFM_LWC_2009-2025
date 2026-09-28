@@ -1,7 +1,6 @@
-<span style='font-size:20px'>**Hourly Liquid Water Content (LWC) and Visibility data from Whiteface Mountain (WFM), 2009 through 2025.
+**Hourly Liquid Water Content (LWC) and Visibility data from Whiteface Mountain (WFM), 2009 through 2025.
 
-Also, in-cloud average LWC associated with each cloud water sample collected from WFM over this same time period**</span>
-
+Also, in-cloud average LWC associated with each cloud water sample collected from WFM over this same time period**
 
 # LWC Calculation Workflow
 
@@ -33,12 +32,19 @@ Also, in-cloud average LWC associated with each cloud water sample collected fro
 
 ## Coding for Calculations _(Done in **Igor Pro**)_
 
-<a name="merge" ![Igor Function for filling in gaps based on visibility sensor](/IgorFunction_Screenshots/Merge_LWC_Vis.png)></a>
-<a name="dump" ![Igor Function for determining Dump Times](/IgorFunction_Screenshots/DumpTimes2014.png)></a>
-<a name="avg" ![Igor Function for calculaing average in-cloud LWC for each sample](/IgorFunction_Screenshots/calc_avg_incloud_LWC2.png)></a>
-<a name="avg2" ![Igor Function for calculating annual means for in-cloud LWC averages over each summer](/IgorFunction_Screenshots/calc_annual_mean_sample_LWC.png)></a>
+<a name="Merge_LWC_Vis"></a>
+![Igor Function for filling in gaps based on visibility sensor](/IgorFunction_Screenshots/Merge_LWC_Vis.png)
 
-### $\color{#8250df}{\text{Adjustments}}$
+<a name="DumpTimes2014"></a>
+![Igor Function for determining Dump Times](/IgorFunction_Screenshots/DumpTimes2014.png)
+
+<a name="calc_avg_incloud_LWC2"></a>
+![Igor Function for calculaing average in-cloud LWC for each sample](/IgorFunction_Screenshots/calc_avg_incloud_LWC2.png)
+
+<a name="calc_annual_mean_sample_LWC"></a>
+![Igor Function for calculating annual means for in-cloud LWC averages over each summer](/IgorFunction_Screenshots/calc_annual_mean_sample_LWC.png)
+
+### $\color{#2f81f7}{\text{Adjustments}}$
 
 - 1-min resolution LWC data in 2018 was shifted +0.04 Aug 3 - 8
 - 1-min resolution LWC data in 2018 was shifted -0.04 Aug 10 - 17
