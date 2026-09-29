@@ -24,7 +24,7 @@
          * for 2014 through 2017, Dump_DateTime = DateON + 12 hrs
        * dateW in 2014 are incorrect (neither DumpDateTime NOR DateON)
          * DumpDateTime in 2014 now calculated based on hourly Pooled Volume dataset (see [**DumpTimes2014**](#dumptime2014), below)
-   * 1.2 Append [Archana GitHub](https://github.com/LanceLab-ASRC/WFM-Cloud-Water-Datasets-2018-2024) DumpDateTime and ID data for 2022 through 2024 (e.g. $\color{#2ea44f}{\text{2018.xlsx}}$)
+   * 1.2 Append [Archana GitHub](https://github.com/LanceLab-ASRC/WFM-Cloud-Water-Datasets-2018-2024) DumpDateTime and ID data for 2018 through 2024 (e.g. $\color{#2ea44f}{\text{2018.xlsx}}$)
    * 1.3 Add 2025 Dump_DateTime and Sample IDs from 2025 cloud water master list
 2. Calculate average in-cloud LWC average for each cloud water sample (see [**calc_avg_incloud_LWC2**](#calc-avg-incloud-lwc), below)
 3. Perform linear fit of in-cloud LWC averages
